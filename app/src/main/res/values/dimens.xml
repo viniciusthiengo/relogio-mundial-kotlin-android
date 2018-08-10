@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding40">40dp</dimen>
+    <dimen name="padding60">60dp</dimen>
+
+    <dimen name="clock_width">150dp</dimen>
+    <dimen name="clock_height">150dp</dimen>
+
+    <dimen name="icon_width">22dp</dimen>
+    <dimen name="icon_height">22dp</dimen>
+    <dimen name="icon_margin">10dp</dimen>
+</resources>

@@ -20,7 +20,10 @@ allprojects {
         google()
         jcenter()
 
-        /* Para acesso a biblioteca Animated-Clock-Icon */
+        /*
+         * Para acesso a biblioteca Animated-Clock-Icon
+         * e também a TrueTime
+         * */
         maven { url "https://jitpack.io" }
     }
 }

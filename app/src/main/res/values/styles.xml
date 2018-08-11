@@ -1,7 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Tema base do aplicativo -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!--
+        Tema base do aplicativo herdando de Theme.AppCompat.Light.NoActionBar
+        para remover a barra de topo padrão, barra que não será necessária no
+        app de Relógio Mundial.
+    -->
+    <style
+        name="AppTheme"
+        parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="android:windowBackground">@drawable/background</item>
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -9,12 +16,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- Temas trablhados no Spinner para que ele tenha toda a configuração desenvolvida no protótipo estático. -->
+    <!--
+        Temas trabalhados no Spinner para que ele tenha toda a configuração
+        visual desenvolvida no protótipo estático.
+    -->
     <style name="AppTheme.SpinnerTheme">
-        <item name="android:textViewStyle">@style/AppTheme.TextViewStyle</item>
+
+        <item name="android:textViewStyle">
+            @style/AppTheme.TextViewStyle
+        </item>
     </style>
 
-    <style name="AppTheme.TextViewStyle" parent="android:Widget.TextView">
+    <style
+        name="AppTheme.TextViewStyle"
+        parent="android:Widget.TextView">
+
         <item name="android:textColor">@android:color/white</item>
         <item name="android:fontFamily">@font/josefin_sans_regular</item>
     </style>

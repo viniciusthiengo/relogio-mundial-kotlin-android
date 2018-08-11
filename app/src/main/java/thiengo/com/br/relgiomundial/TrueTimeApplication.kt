@@ -30,8 +30,8 @@ class TrueTimeApplication: Application() {
                         /*
                          * Tudo certo com a obtenção de uma data
                          * TrueTime de servidor NTP, agora é preciso
-                         * atualizar o horário em tela, logo um
-                         * mensagem broadcast é utilizada para
+                         * atualizar o horário em tela, logo uma
+                         * "mensagem" broadcast é utilizada para
                          * comunicar a atividade ClockActivity sobre
                          * isso, a comunicação será por meio de
                          * BroadcastApplication e LocalBroadcastManager.

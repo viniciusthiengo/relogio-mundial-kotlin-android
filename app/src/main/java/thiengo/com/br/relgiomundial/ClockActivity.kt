@@ -85,19 +85,23 @@ class ClockActivity :
     override fun onNothingSelected( adapter: AdapterView<*>? ) {}
 
     /*
-     * Método que invocará onItemSelected() para atualizar o
-     * horário, isso, pois fireSpinnerItemSelected() somente
-     * será acionado assim que a API TrueTime tiver retorno de
-     * algum servidor NTP. fireSpinnerItemSelected() garante
-     * que o horário em apresentação é o correto.
+     * Método responsável por apresentar / esconder a View de informação
+     * sobre a origem do horário (GMT) sendo utilizado: servidor NTP
+     * (certeza que o horário estará correto); ou aparelho. Este método
+     * será invocado sempre no doInBackground() de uma instância de
+     * AsyncTrueTime, por isso a necessidade do runOnUiThread() para que
+     * a atualização de View não seja fora da Thread UI.
      * */
-    fun fireSpinnerItemSelected(){
+    fun infoDateShow( status: Boolean ){
 
-        sp_countries
-            .onItemSelectedListener
-            .onItemSelected(null, null, sp_countries.selectedItemPosition, 0)
+        runOnUiThread {
+            ll_info_date.visibility =
+                if(status) /* Origem: aparelho */
+                    View.VISIBLE
+                else /* Origem: servidor NTP */
+                    View.GONE
+        }
     }
-
 
     /*
      * Método responsável por atualizar tanto o ClockImageView
@@ -124,21 +128,16 @@ class ClockActivity :
     }
 
     /*
-     * Método responsável por apresentar / esconder a View de informação
-     * sobre a origem do horário (GMT) sendo utilizado: servidor NTP
-     * (certeza que o horário estará correto); ou aparelho. Este método
-     * será invocado sempre no doInBackground() de uma instância de
-     * AsyncTrueTime, por isso a necessidade do runOnUiThread() para que
-     * a atualização de View não seja fora da Thread UI.
+     * Método que invocará onItemSelected() para atualizar o
+     * horário, isso, pois fireSpinnerItemSelected() somente
+     * será acionado assim que a API TrueTime tiver retorno de
+     * algum servidor NTP. fireSpinnerItemSelected() garante
+     * que o horário em apresentação é o correto.
      * */
-    fun infoDateShow( status: Boolean ){
+    fun fireSpinnerItemSelected(){
 
-        runOnUiThread {
-            ll_info_date.visibility =
-                if(status) /* Origem: aparelho */
-                    View.VISIBLE
-                else /* Origem: servidor NTP */
-                    View.GONE
-        }
+        sp_countries
+                .onItemSelectedListener
+                .onItemSelected(null, null, sp_countries.selectedItemPosition, 0)
     }
 }

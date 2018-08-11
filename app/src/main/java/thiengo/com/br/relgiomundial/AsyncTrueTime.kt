@@ -29,11 +29,11 @@ class AsyncTrueTime(): AsyncTask<String, Unit, Calendar>() {
          * */
         try{
             date = TrueTimeRx.now() /* Horário servidor NTP */
-            weakActivity.get()?.infoDateShow(false)
+            weakActivity.get()?.infoDateShow(false) // Esconde info.
         }
         catch (e : Exception){
             date = Date() /* Horário do aparelho */
-            weakActivity.get()?.infoDateShow(true)
+            weakActivity.get()?.infoDateShow(true) // Apresenta info.
         }
 
         /*
@@ -52,8 +52,6 @@ class AsyncTrueTime(): AsyncTask<String, Unit, Calendar>() {
     override fun onPostExecute( calendar: Calendar ) {
         super.onPostExecute( calendar )
 
-        if( weakActivity.get() != null ){
-            (weakActivity.get() as ClockActivity).updateClock( calendar )
-        }
+        weakActivity.get()?.updateClock( calendar )
     }
 }

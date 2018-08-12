@@ -28,7 +28,7 @@ class ClockActivity :
 
         /*
          * Vinculando o "listener de item selecionado" ao Spinner
-         * da tela.
+         * de fusos horários.
          * */
         sp_countries.onItemSelectedListener = this
     }

@@ -2,6 +2,7 @@ package thiengo.com.br.relgiomundial
 
 import android.app.Application
 import android.content.Intent
+import android.os.SystemClock
 import android.support.v4.content.LocalBroadcastManager
 import com.instacart.library.truetime.TrueTimeRx
 import io.reactivex.schedulers.Schedulers
@@ -39,7 +40,7 @@ class TrueTimeApplication: Application() {
                         val intent = Intent( BroadcastApplication.FILTER )
 
                         LocalBroadcastManager
-                            .getInstance( this )
+                            .getInstance( this@TrueTimeApplication )
                             .sendBroadcast( intent )
                     },
                     {

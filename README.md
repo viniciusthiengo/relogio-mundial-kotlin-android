@@ -2,7 +2,7 @@
 
 Projeto Kotlin Android da segunda parte do artigo [True Time API Para Data e Horário NTP no Android](https://www.thiengo.com.br/true-time-api-para-data-e-horario-ntp-no-android#title-17) do Blog [Thiengo.com.br](https://www.thiengo.com.br). Artigo que discute em detalhes a True Time API, uma API que nos permite ter em projeto os dados de data e horário exatos.
 
-<img src="https://www.thiengo.com.br/img/post/normal/brda4c7d0kkbofcvqal1f5lcs77dc6138987865dc86b34544d8f045cdb.gif" width="240">
+<img src="https://www.thiengo.com.br/img/post/normal/brda4c7d0kkbofcvqal1f5lcs77dc6138987865dc86b34544d8f045cdb.gif" width="240" alt="Animação da mudança de fuso horário no app Android Relógio Mundial">
 
 O conteúdo do artigo também está disponível em [vídeos](https://www.thiengo.com.br/true-time-api-para-data-e-horario-ntp-no-android#title-34) e em [slides](https://www.thiengo.com.br/true-time-api-para-data-e-horario-ntp-no-android#title-33).
 
